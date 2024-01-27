@@ -75,10 +75,9 @@ elif main_menu_value == "core-utils":
         "parallel"
     ]
     core_utils_string = "\n".join(core_utils)
+    core_utils_string = core_utils_string.encode()
     # Turn cheat_items_string into a bytes array so we can use it in
-    # a subprocess
-    core_utils_string = core_utils_string.encode('utf-8').strip()
-
+    # a subprocess core_utils_string = core_utils_string.encode('utf-8').strip()
     process_core_utils = sp.run(
         "fzf --layout=reverse",
         input=core_utils_string,
